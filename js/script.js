@@ -93,6 +93,8 @@ $("a.read-more").click(function (e) {
 $(window).on('scroll', function () {
     if (pageYOffset > 100) {
         $('a.js-btn-top').removeClass('hidden').css({ bottom: '3%' })
+    } else if (pageYOffset < 100) {
+        $('a.js-btn-top').addClass('hidden').css({ bottom: '-100%' })
     }
 
 })
