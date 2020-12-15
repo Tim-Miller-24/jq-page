@@ -100,7 +100,16 @@ $(window).on('scroll', function () {
 })
 
 $('a.js-btn-top').click(function () {
-    console.log(window.pageYOffset)
-    window.pageYOffset = 0
-    // return window.pageYOffset = 0
+    $('html').animate({scrollTop: 0})
+})
+
+
+$('.js-sroll-to-id').click(function(e) {
+    e.preventDefault();
+
+    let attr = $(this).attr('href');
+
+    let elTop = $(attr).offset().top;
+
+    $('html').animate({scrollTop: elTop - $('.nav').innerHeight()}, 800)
 })
